@@ -11,16 +11,32 @@
   ],
   "main": "./dist/extension.js",
   "activationEvents": [
-    "onLanguage:javascript",
-    "onStartupFinished"
+    "onLanguage:javascript"
   ],
   "contributes": {
     "commands": [
       {
         "command": "fastlog.helloWorld",
-        "title": "fastlog"
+        "title": "fastlog.hello"
+      },
+      {
+        "command": "fastlog.nav",
+        "title": "fastConsole"
+      },
+      {
+        "command": "fastlog.hover",
+        "title": "fastLogHover"
       }
-    ]
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorFocus",
+          "command": "fastlog.nav",
+          "group": "navigation" 
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
