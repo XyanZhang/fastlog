@@ -9,6 +9,7 @@
   "categories": [
     "Other"
   ],
+  "repository": "https://github.com/XyanZhang/fastlog.git",
   "main": "./dist/extension.js",
   "activationEvents": [
     "onLanguage:javascript"
