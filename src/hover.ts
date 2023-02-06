@@ -21,9 +21,6 @@ let hover: vscode.Disposable = vscode.languages.registerHoverProvider('javascrip
       1. 第一项：
         - 第一个元素
         - 第二个元素
-      2. 第二项：
-        - 第一个元素
-        - 第二个元素
   `);
   }
  }

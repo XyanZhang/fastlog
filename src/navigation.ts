@@ -20,7 +20,6 @@ export default disposable
 
 async function printDefinitionsForActiveEditor() {
   const activeEditor = vscode.window.activeTextEditor;
-  console.log('activeEditor',activeEditor)
   if (!activeEditor) {
     return;
   }
@@ -30,32 +29,24 @@ async function printDefinitionsForActiveEditor() {
     activeEditor.document.uri,
     activeEditor.selection.active
   );
-  console.log(activeEditor.selection.active)
-  console.log(activeEditor.selection.active.character)
-  console.log(activeEditor.selection.active.line)
 
   for (const definition of definitions) {
     console.log('definition',definition);
   }
   
-  // console.log(activeEditor.selection.isSingleLine) // 是否是单行
-  console.log(activeEditor.selection)
   contentReplace(activeEditor)
 }
 
 function contentReplace(activeEditor: vscode.TextEditor) {
   const { selection, document } = activeEditor;
   let handleLine = selection.active.line
-  let newLine = handleLine + 1; 
-  console.log(selection.start)
-  console.log(selection.end)
-  const word  = document.getText(document.getWordRangeAtPosition(selection.start));
+  const selectText  = document.getText(new vscode.Range(selection.start, selection.end));
+  // const word  = document.getText(document.getWordRangeAtPosition(selection.start)); // 获取选中单词
+  console.log('selectText', selectText)
   const line = document.lineAt(handleLine).text;
-  console.log('word', word)
-  console.log('line', line)
   activeEditor?.edit(editBuilder => {
     // 从开始到结束，全量替换
-    const text = `${line}\nconsole.log('${word}',${word});\n`;
+    const text = `${line}\nconsole.log('${selectText}',${selectText});\n`;
     // 获取当前行
     //  new vscode.Range()
     editBuilder.replace(new vscode.Range(handleLine, 0, handleLine+1, 0), text);

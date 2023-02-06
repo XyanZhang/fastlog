@@ -22,10 +22,6 @@
       {
         "command": "fastlog.nav",
         "title": "fastConsole"
-      },
-      {
-        "command": "fastlog.hover",
-        "title": "fastLogHover"
       }
     ],
     "menus": {

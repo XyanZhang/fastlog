@@ -13,9 +13,9 @@ export function activate(context: vscode.ExtensionContext) {
 	// This line of code will only be executed once when your extension is activated
 	console.log('Congratulations, your extension "fastlog" is now active!');
 
-	context.subscriptions.push(message);
+	// context.subscriptions.push(message);
 	context.subscriptions.push(nav);
-	context.subscriptions.push(hover);
+	// context.subscriptions.push(hover);
 }
 
 // This method is called when your extension is deactivated
