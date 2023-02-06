@@ -16,16 +16,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "fastlog.helloWorld",
-        "title": "fastlog.hello"
-      },
-      {
         "command": "fastlog.nav",
         "title": "fastConsole"
-      },
-      {
-        "command": "fastlog.hover",
-        "title": "fastLogHover"
       }
     ],
     "menus": {
